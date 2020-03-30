@@ -1,3 +1,4 @@
+#study link:https://www.youtube.com/watch?v=ObR8UuaPc6Q
 #map returns a new array of manipulated elements
 def map(source_array)
 #Inside of this method,we want to pass each elements from array to
@@ -5,7 +6,7 @@ def map(source_array)
 newAr=[]
 i=0
   while i<source_array.length do
-    newAr.push(yield(source_array[i]))
+    newAr<<yield(source_array[i])
     i+=1
   end
   newAr
@@ -22,9 +23,9 @@ def reduce(source_array,starting_point=nil)#这样就能使它optional
     i=1#since we are dealing with 1st position array[0] already
   end
 
-  while i<source_array.length
-  sum=yield(sum,source_array[i])
-  i+= 1
-  end
-  sum
+    while i<source_array.length
+      sum=yield(sum,source_array[i])
+      i+= 1
+    end
+    sum
 end
